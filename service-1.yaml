@@ -1,0 +1,18 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-1
+  namespace: namespace-1
+spec:
+  selector:
+    app: pod-1
+  type: NodePort
+  ports:
+  - name: pod-1
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30001
+---
+
